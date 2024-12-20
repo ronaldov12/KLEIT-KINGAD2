@@ -1,3 +1,4 @@
+
 /* Contenedor principal */
 .detalle-contenedor {
     max-width: 1200px;
@@ -14,32 +15,32 @@
 
 /* Tarjeta de producto */
 .item-card {
-    display: flex;
-    justify-content: space-between;
+    display: grid; 
+    grid-template-columns: 1fr 2fr; 
+    gap: 20px;
     background-color: #ffffff9d;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 6px 8px 12px #0000001a;
-    overflow: hidden;
     padding: 20px;
 }
 
 /* Contenedor de la imagen */
 .item-img-contenedor {
-    flex: 1;
-    max-width: 300px;
-    margin-right: 20px;
+    max-width: 100%;
+    display: flex;
+    justify-content: center; 
 }
 
 .item-img {
-    width: 110%;
+    width: 100%; 
     height: auto;
     border-radius: 8px;
+    box-shadow: 3px 5px 7px #0000001a;
 }
 
-/* Contenido de la tarjeta  */
+/* Contenido de la tarjeta */
 .item-info {
-    flex: 2;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -54,19 +55,26 @@
     margin: 10px 0;
 }
 
-/* Enlace para finalizar compra */
-.finalize-link {
+/* Estilo para los botones */
+.item-card button, .finalize-link {
     margin-top: 20px;
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #000000;
+    padding: 12px 24px;
+    background-color: #2d4b5f;
     color: #fff;
     font-size: 1.1rem;
     text-decoration: none;
+    border: none;
     border-radius: 4px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
 }
 
-.finalize-link:hover {
+/* Estilo cuando el botón es hover */
+.item-card button:hover, .finalize-link:hover {
     background-color: #0788e4;
+    transform: scale(1.05); 
+}
+
+.item-card button:focus, .finalize-link:focus {
+    outline: none; /* Quite el outline para un diseño más limpio */
 }

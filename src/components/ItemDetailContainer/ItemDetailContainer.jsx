@@ -1,24 +1,21 @@
-import { useEffect, useState } from "react"
-import { getProductByID } from "../asyncMoock"
-import { useParams } from "react-router-dom"
-import ItemDetail from "../ItemDetail/ItemDetail"
+import { useParams } from "react-router-dom";
+import ItemDetail from "../ItemDetail/ItemDetail";
+import { getProductByid } from "../../services/firebase/firestore/product";
+import { useAsync } from "../../hooks/useAsync";
+
+
 export default function ItemDetailContainer() {
-    const[product, setProducts] = useState ({})
-    const {productId} = useParams()
+    const { productId } = useParams()
 
-    useEffect(() => {
-        getProductByID(productId)
-        .then((resp) => {
-            setProducts(resp)
-        })
-    }, [productId])
+
+    const asynFunction = () => getProductByid(productId)
+    const {data:product} = useAsync(asynFunction, [productId])
+
     return (
-        
         <div>
-            <h2>detalle del producto</h2>
-            <ItemDetail {...product}/>
+            <h2>Detalle del producto</h2>
+            <hr />
+            <ItemDetail {...product} />
         </div>
-    )
+    );
 }
-
-

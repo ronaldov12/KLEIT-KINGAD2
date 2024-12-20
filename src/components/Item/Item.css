@@ -7,7 +7,7 @@
     overflow: hidden;
     transition: box-shadow 1.3s ease;
     margin: 10px;
-    background-color: #ffffff;
+    background-color: #ffff;
 }
 
 .card:hover {
@@ -48,8 +48,8 @@
 }
 
 .btn-primary {
-    background-color: #000000;
-    color: white;
+    background-color: #D9C79E;
+    color: #000000;
     border: none;
     padding: 10px 20px;
     text-decoration: none;

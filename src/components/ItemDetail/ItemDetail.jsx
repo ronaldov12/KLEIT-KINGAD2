@@ -1,7 +1,21 @@
 import { Link } from "react-router-dom";
-import './ItemDetail.css'; // Asegúrate de importar el archivo CSS
+import { useCart } from "../../hooks/useCart";
+import ItemCount from "../ItemCount/ItemCount";
+import "./ItemDetail.css"
 
-export default function ItemDetail({ name, img, description, category, price, stock }) {
+export default function ItemDetail({ id, name, img, description, category, price, stock }) {
+
+    const { addItem, isInCart } = useCart();
+
+    const handleAdd = (count) => {
+        const productToAdd = {
+            id,
+            name,
+            price,
+            quantity: count
+        };
+        addItem(productToAdd);
+    };
 
     return (
         <div className="detalle-contenedor">
@@ -17,12 +31,16 @@ export default function ItemDetail({ name, img, description, category, price, st
 
                 <div className="item-info">
                     <p className="item-description">{description}</p>
-                    <p className="item-category">Categoria: <strong>{category}</strong></p>
-                    <p className="item-price">Precio: <strong>${price}</strong></p>
-                    <p className="item-stock">stock: <strong>{stock}</strong></p>
-
-                    <Link to="/cart" className="btn btn-primary finalize-link">Comprar</Link>
+                    <p className="item-category">Category: {category}</p>
+                    <p className="item-price">Price: $ {price}</p>
+                    <p className="item-stock">Stock: {stock}</p>
                 </div>
+
+                {isInCart(id) ? (
+                    <Link to="/cart" className="finalize-link">Finalizar compra</Link>
+                ) : (
+                    <ItemCount stock={stock} onAdd={handleAdd} />
+                )}
             </div>
         </div>
     );

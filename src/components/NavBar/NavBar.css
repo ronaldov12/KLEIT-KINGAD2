@@ -8,9 +8,10 @@
     background-color: #ab9d6c; 
     position: fixed; 
     top: 0; 
-    z-index: 1000; 
+    z-index: 100; 
 }
 
 .Nav-link img{
     width: 20px;
 }
+

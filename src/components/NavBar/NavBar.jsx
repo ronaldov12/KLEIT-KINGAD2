@@ -7,6 +7,7 @@ export default function NavBar() {
     // Agregar un estado para cartCount
     const [cartCount, setCartCount] = useState(0);  // Inicializa el carrito con 0 elementos
 
+
     return (
         <nav className="navbar navbar-expand-lg navbar-light ">
             <div className="container-fluid">
@@ -36,15 +37,15 @@ export default function NavBar() {
                         </li>
 
                         <li className="nav-item">
-                            <Link className="nav-link" to="/"><img  src="/src/assets/img/s.svg" alt="kleit kingad logo" style={{ width: '3.5vw', height: 'auto' }} /></Link>
+                        <Link className="nav-link" to="/"><img  src="/public/assets/img/s.svg" alt="kleit kingad logo" style={{ width: '3.5vw', height: 'auto' }} /></Link>
                         </li>
 
                         <li className="nav-item">
                             <Link className="nav-link" to="/category/mocasines">Mocasines</Link>
                         </li>
                         <li className="nav-item" style={{ marginLeft: '20px' }}>
-                            
-                            <CartWidget cartCount={5} />
+                        
+                        <CartWidget  />
                         </li>
                     </ul>
                 </div>
