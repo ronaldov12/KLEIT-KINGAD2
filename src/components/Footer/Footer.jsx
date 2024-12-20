@@ -14,13 +14,13 @@ const Footer = () => {
             </div>
             <div className="footer-social">
                 <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                    <img src="/public/assets/img/facebook.png" alt="Facebook" style={{ width: '30px', height: '30px' }} />
+                    <img src="/assets/img/facebook.png" alt="Facebook" style={{ width: '30px', height: '30px' }} />
                 </a>
                 <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                    <img src="/public/assets/img/instagram.png" alt="Instagram" style={{ width: '30px', height: '30px' }} />
+                    <img src="/assets/img/instagram.png" alt="Instagram" style={{ width: '30px', height: '30px' }} />
                 </a>
                 <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                    <img src="/public/assets/img/x.png" alt="Twitter" style={{ width: '30px', height: '30px' }} />
+                    <img src="/assets/img/x.png" alt="Twitter" style={{ width: '30px', height: '30px' }} />
                 </a>
             </div>
 

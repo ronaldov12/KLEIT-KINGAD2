@@ -37,7 +37,7 @@ export default function NavBar() {
                         </li>
 
                         <li className="nav-item">
-                        <Link className="nav-link" to="/"><img  src="/public/assets/img/s.svg" alt="kleit kingad logo" style={{ width: '3.5vw', height: 'auto' }} /></Link>
+                        <Link className="nav-link" to="/"><img  src="/assets/img/s.svg" alt="kleit kingad logo" style={{ width: '3.5vw', height: 'auto' }} /></Link>
                         </li>
 
                         <li className="nav-item">
